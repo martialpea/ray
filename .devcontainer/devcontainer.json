@@ -14,7 +14,7 @@
   },
   "postAttachCommand": {
     "expose": "gh codespace ports visibility 443:public -c $CODESPACE_NAME",
-    "start": "sudo /usr/local/bin/xray run -c /etc/xray/g2ray.json"
+    "start": "sudo /usr/local/bin/xray run -c /etc/xray/g2ray.json &> /tmp/xray.log & sleep 2 && /usr/local/bin/show-link.sh"
   },
   "portsAttributes": {
     "443": {
