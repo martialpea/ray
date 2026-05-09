@@ -1,29 +1,42 @@
-# g2ray
+# g2ray — نسخه بهینه‌شده
 
-A self-hosted proxy setup that runs inside GitHub Codespaces.
+پروکسی self-hosted مبتنی بر Xray که روی GitHub Codespaces اجرا می‌شود.
 
-## Quick Start
+## تغییرات نسبت به نسخه اصلی
 
-1. Fork this repository to your own account
-2. Navigate to your fork and open the **Codespaces** tab under the Code button
-3. Create a new codespace on the main branch
-4. Wait a few minutes for the environment to build and initialize
-5. Your connection string will appear in the terminal once setup is complete
+| مشکل | نسخه قدیم | نسخه جدید |
+|------|-----------|-----------|
+| UUID | ثابت و عمومی در کد | تولید خودکار هنگام build |
+| لینک اتصال | IP ثابت هاردکد | hostname پویا از CODESPACE_NAME |
+| routing | ندارد | بلاک IP خصوصی، تورنت، تبلیغات |
+| DNS | ندارد | DoH با 1.1.1.1 |
+| policy/timeout | ندارد | timeout و buffer بهینه |
+| fallback | ندارد | اتصال ناشناس → HTTP |
+| لاگ | warning بدون فایل | error log در /tmp |
 
-![output](./docs/screenshot.png)
+## نصب
 
-## Connecting
+1. این ریپازیتوری را fork کنید
+2. روی **Code → Codespaces → New codespace** کلیک کنید
+3. چند دقیقه صبر کنید تا build تمام شود
+4. لینک اتصال در ترمینال نمایش داده می‌شود
 
-Grab the link printed in the terminal and paste it into any compatible client (v2rayNG, Nekobox, etc.).
+## محدودیت GitHub Codespaces (رایگان)
 
-## Usage Limits
+- **۱۲۰ core-hour در ماه** — چون ۲ هسته استفاده می‌کند، **۶۰ ساعت** در ماه
+- بعد از استفاده، Codespace را **متوقف** کنید: `gh codespace stop`
 
-GitHub Codespaces provides **120 core-hours/month** on the free tier. Since this config uses 2 cores, that translates to roughly 60 hours per month. Make sure to stop your codespace when not actively using it to avoid burning through your quota.
+## نکات امنیتی
 
-## Compatibility
+- UUID هر بار که Dockerfile بیلد می‌شود، خودکار تولید می‌شود
+- بلاک BitTorrent فعال است (جلوگیری از abuse و بن شدن اکانت)
+- IP های خصوصی و loopback بلاک هستند
+- در صورت اتصال غیر-VLESS، fallback به HTTP فعال است
 
-Works on most networks that aren't aggressively blocking GitHub infrastructure. If the default region doesn't work for you, try creating the codespace in a different datacenter.
+## کلاینت‌های سازگار
 
-## License
-
-MIT
+- v2rayNG (اندروید)
+- Nekobox (اندروید / ویندوز)
+- v2rayN (ویندوز)
+- Streisand (iOS)
+- FoXray (iOS)
