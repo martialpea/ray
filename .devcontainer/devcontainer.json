@@ -1,5 +1,5 @@
 {
-  "name": "g2ray",
+  "name": "silver-proxy-8b8971",
   "build": {
     "dockerfile": "Dockerfile",
     "context": "."
@@ -12,15 +12,17 @@
       "version": "latest"
     }
   },
-  "postAttachCommand": "gh codespace ports visibility 443:public -c $CODESPACE_NAME && sudo /usr/local/bin/xray run -c /etc/xray/g2ray.json &> /tmp/xray.log & sleep 3 && show-link.sh",
+  "postAttachCommand": "gh codespace ports visibility 443:public -c $CODESPACE_NAME && bash /usr/local/bin/start.sh",
   "portsAttributes": {
     "443": {
-      "label": "g2ray",
+      "label": "silver-proxy-8b8971",
       "protocol": "http",
       "onAutoForward": "silent"
     }
   },
-  "forwardPorts": [443],
+  "forwardPorts": [
+    443
+  ],
   "hostRequirements": {
     "cpus": 2
   }

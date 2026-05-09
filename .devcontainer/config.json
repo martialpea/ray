@@ -8,7 +8,9 @@
     "servers": [
       {
         "address": "https://1.1.1.1/dns-query",
-        "domains": ["geosite:geolocation-!cn"],
+        "domains": [
+          "geosite:geolocation-!cn"
+        ],
         "queryStrategy": "UseIP"
       },
       "8.8.8.8",
@@ -25,19 +27,13 @@
       "settings": {
         "clients": [
           {
-            "id": "${XRAY_UUID}",
+            "id": "3f12a106-23b6-498b-97e5-7eb19189e3eb",
             "flow": "",
             "level": 0,
-            "email": "user@g2ray"
+            "email": "user@silver-proxy-8b8971"
           }
         ],
-        "decryption": "none",
-        "fallbacks": [
-          {
-            "dest": 8080,
-            "xver": 0
-          }
-        ]
+        "decryption": "none"
       },
       "streamSettings": {
         "network": "xhttp",
@@ -51,19 +47,12 @@
       },
       "sniffing": {
         "enabled": true,
-        "destOverride": ["http", "tls", "quic"],
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
         "routeOnly": false
-      }
-    },
-    {
-      "tag": "fallback-http",
-      "port": 8080,
-      "listen": "127.0.0.1",
-      "protocol": "dokodemo-door",
-      "settings": {
-        "address": "127.0.0.1",
-        "port": 8080,
-        "network": "tcp"
       }
     }
   ],
@@ -85,26 +74,6 @@
       }
     }
   ],
-  "routing": {
-    "domainStrategy": "IPIfNonMatch",
-    "rules": [
-      {
-        "type": "field",
-        "ip": ["geoip:private"],
-        "outboundTag": "block"
-      },
-      {
-        "type": "field",
-        "domain": ["geosite:category-ads-all"],
-        "outboundTag": "block"
-      },
-      {
-        "type": "field",
-        "protocol": ["bittorrent"],
-        "outboundTag": "block"
-      }
-    ]
-  },
   "policy": {
     "levels": {
       "0": {
@@ -112,16 +81,8 @@
         "connIdle": 300,
         "uplinkOnly": 2,
         "downlinkOnly": 5,
-        "statsUserUplink": false,
-        "statsUserDownlink": false,
         "bufferSize": 512
       }
-    },
-    "system": {
-      "statsInboundUplink": false,
-      "statsInboundDownlink": false,
-      "statsOutboundUplink": false,
-      "statsOutboundDownlink": false
     }
   }
 }
