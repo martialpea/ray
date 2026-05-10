@@ -5,7 +5,7 @@ COPY show-link.sh /usr/local/bin/show-link.sh
 COPY start.sh /usr/local/bin/start.sh
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-       bash curl wget unzip ca-certificates openssl uuid-runtime \
+       bash curl wget unzip ca-certificates openssl uuid-runtime tmux \
     && rm -rf /var/lib/apt/lists/* \
     && chmod +x /tmp/setup.sh \
     && /tmp/setup.sh \

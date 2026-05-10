@@ -1,5 +1,5 @@
 {
-  "name": "sharp-path-7a2e47",
+  "name": "swift-relay-86185b",
   "build": {
     "dockerfile": "Dockerfile",
     "context": "."
@@ -15,7 +15,7 @@
   "postAttachCommand": "gh codespace ports visibility 443:public -c $CODESPACE_NAME && bash /usr/local/bin/start.sh",
   "portsAttributes": {
     "443": {
-      "label": "sharp-path-7a2e47",
+      "label": "swift-relay-86185b",
       "protocol": "http",
       "onAutoForward": "silent"
     }

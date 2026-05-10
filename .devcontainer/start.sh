@@ -1,6 +1,8 @@
 #!/bin/bash
-sudo /usr/local/bin/xray run -c /etc/xray/g2ray.json &>/tmp/xray.log &
+tmux kill-session -t g2ray 2>/dev/null || true
+tmux new-session -d -s g2ray
+tmux send-keys -t g2ray "sudo /usr/local/bin/xray run -c /etc/xray/g2ray.json &>/tmp/xray.log" Enter
 sleep 2
 show-link.sh
-echo "[g2ray] Keep-alive active..."
-while true; do sleep 300; echo "[$(date '+%H:%M')] alive" >>/tmp/keepalive.log; done
+echo "[g2ray] سرور داخل tmux اجرا شد — ترمینال را می‌توانید ببندید"
+echo "[g2ray] برای دیدن log: tmux attach -t g2ray"
