@@ -1,5 +1,5 @@
 {
-  "name": "swift-link-8a3ab4",
+  "name": "sharp-path-7a2e47",
   "build": {
     "dockerfile": "Dockerfile",
     "context": "."
@@ -15,7 +15,7 @@
   "postAttachCommand": "gh codespace ports visibility 443:public -c $CODESPACE_NAME && bash /usr/local/bin/start.sh",
   "portsAttributes": {
     "443": {
-      "label": "swift-link-8a3ab4",
+      "label": "sharp-path-7a2e47",
       "protocol": "http",
       "onAutoForward": "silent"
     }
