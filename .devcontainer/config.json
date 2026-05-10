@@ -27,10 +27,10 @@
       "settings": {
         "clients": [
           {
-            "id": "dbac61bb-f7c1-4f75-8a2a-4f57f7ac7b4e",
+            "id": "eab9b25c-a5fd-479c-ae94-7b7808916cdd",
             "flow": "",
             "level": 0,
-            "email": "user@fast-tunnel-7f0f0a"
+            "email": "user@storm-relay-533f67"
           }
         ],
         "decryption": "none"
