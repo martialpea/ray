@@ -7,6 +7,7 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends \
        bash curl wget unzip ca-certificates openssl uuid-runtime tmux \
     && rm -rf /var/lib/apt/lists/* \
+    && mkdir -p /etc/xray \
     && chmod +x /tmp/setup.sh \
     && /tmp/setup.sh \
     && rm /tmp/setup.sh \

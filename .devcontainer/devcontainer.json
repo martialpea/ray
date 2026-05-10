@@ -1,5 +1,5 @@
 {
-  "name": "swift-relay-86185b",
+  "name": "fast-tunnel-7f0f0a",
   "build": {
     "dockerfile": "Dockerfile",
     "context": "."
@@ -15,7 +15,7 @@
   "postAttachCommand": "gh codespace ports visibility 443:public -c $CODESPACE_NAME && bash /usr/local/bin/start.sh",
   "portsAttributes": {
     "443": {
-      "label": "swift-relay-86185b",
+      "label": "fast-tunnel-7f0f0a",
       "protocol": "http",
       "onAutoForward": "silent"
     }
