@@ -27,13 +27,14 @@
       "settings": {
         "clients": [
           {
-            "id": "eab9b25c-a5fd-479c-ae94-7b7808916cdd",
+            "id": "63f5b223-07b1-42ac-9df8-26560f1c99f6",
             "flow": "",
             "level": 0,
-            "email": "user@storm-relay-533f67"
+            "email": "user@swift-tunnel-901735"
           }
         ],
-        "decryption": "none"
+        "decryption": "none",
+        "udp": true
       },
       "streamSettings": {
         "network": "xhttp",
